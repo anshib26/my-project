@@ -43,8 +43,4 @@ jobs:
         image: anshib26/demo-app
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-
-  publish:
-
-      needs: build           
+        password: ${{ secrets.DOCKER_PASSWORD }}        
