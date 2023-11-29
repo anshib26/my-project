@@ -5,10 +5,6 @@
 # This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
-uses : selects an action
-run : runs a CL command
-chmod : changes permission of the gradle file
-
 name: Java CI with Gradle
 
 on:
@@ -40,11 +36,3 @@ jobs:
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
         arguments: build
-
-    - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v6
-      with:
-        image: anshib26/demo-app
-        registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
